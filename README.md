@@ -8,7 +8,7 @@
 
 
 | IDENTIFICACIÓN | |
-| --- | --- |
+| :- | :- |
 | Nombre de la asignatura | Electromagnetismo |
 | Programa Académico | Ingeniería de ambiental y sanitaria, agroindustrial |
 | Docente | Dra. Yoleivys Delgado Beleño |
