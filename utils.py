@@ -3,11 +3,12 @@ Funciones útiles para el computo y registro en el laboratorio de la
 ley de Coulomb
 """
 
-from typing import List, Tuple
+from typing import List
 from pandas import DataFrame
 
 RegistroFuerza = tuple[float, float]
 RegistroCarga = tuple[RegistroFuerza, float]
+
 
 def crear_dataframe() -> DataFrame:
     """
@@ -26,6 +27,14 @@ def nuevo_registro(fuerza: RegistroFuerza, distancia: float) -> List[float]:
     return [fuerza[0] * (10 ** fuerza[1]), distancia, 1 / (distancia**2)]
 
 
+def registrar_cargas(dataframe: DataFrame, *registros: RegistroCarga) -> None:
+    """
+    Registrar en el dataframe recibido n cantidad de registros de cargas
+    """
+    for i, registro in enumerate(registros):
+        dataframe.loc[i + 1] = nuevo_registro(registro[0], registro[1])
+
+
 def registrar(dataframe: DataFrame, *registros: RegistroFuerza, inicio=0, paso=0) -> None:
     """
     Registrar en el dataframe recibido n cantidad de registros de fuerza
@@ -34,14 +43,6 @@ def registrar(dataframe: DataFrame, *registros: RegistroFuerza, inicio=0, paso=0
     for i, registro in enumerate(registros):
         dataframe.loc[i + 1] = nuevo_registro(registro, inicio)
         inicio += paso
-
-
-def registrar(dataframe: DataFrame, *registros: RegistroCarga) -> None:
-    """
-    Registrar en el dataframe recibido n cantidad de registros de cargas
-    """
-    for i, registro in enumerate(registros):
-        dataframe.loc[i + 1] = nuevo_registro(registro[0], registro[1])
 
 
 def pm_a_mts(pm: float) -> float:
