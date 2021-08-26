@@ -61,11 +61,14 @@ def registrar(dataframe: DataFrame, *registros: RegistroFuerza, inicio=0, paso=0
         inicio += paso
 
 def graficar(titulo: str, dataframe: DataFrame, x="r (pm)", color="#3EA6FF") -> None:
+    """
+    Grafica de fuerza en newtons vs distancia en una base dada
+    """
     plt.style.use("seaborn-whitegrid")
-    plt.rcParams.update({"figure.figsize": (7,5), "figure.dpi": 100})
     plt.plot(dataframe[x].tolist(), dataframe["F (N)"].tolist(),
         color=color, marker=".", markerfacecolor=color,
     )
+    plt.rcParams.update({"figure.figsize": (7,5), "figure.dpi": 100})
     plt.title(titulo)
     plt.ylabel("F (N)")
     plt.xlabel(x)
@@ -75,4 +78,8 @@ def graficar(titulo: str, dataframe: DataFrame, x="r (pm)", color="#3EA6FF") -> 
 
 
 def error_porcentual(aceptado: float, experimental: float) -> float:
+    """
+    Calcular error porcentual de un resultado experimental obtenido con
+    respecto al aceptado
+    """
     return ((aceptado - experimental) / aceptado) * 100
