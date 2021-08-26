@@ -13,12 +13,11 @@ charset = utf-8
 max_line_length = 119
 
 # Use 2 spaces for the HTML files
-[*.html]
+[*.{html,json,yml}]
 indent_size = 2
 
 # The JSON files contain newlines inconsistently
 [*.json]
-indent_size = 2
 insert_final_newline = ignore
 
 [**/admin/js/vendor/**]
