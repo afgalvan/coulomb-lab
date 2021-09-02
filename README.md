@@ -10,8 +10,8 @@
 | IDENTIFICACIÓN | |
 | :- | :- |
 | Nombre de la asignatura | Electromagnetismo |
-| Programa Académico | Ingeniería de ambiental y sanitaria, agroindustrial |
-| Docente | Dra. Yoleivys Delgado Beleño |
+| Programa Académico | Ingeniería de Sistemas |
+| Docente | Dr. Carlos Eduardo Martinez Nuñez |
 | Nombre del Estudiante | Andrés Felipe Galván |
 
 ---
